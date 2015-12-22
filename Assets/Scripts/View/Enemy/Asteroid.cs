@@ -6,13 +6,17 @@ namespace DragonsDemons.View.Enemy
 {
 	public class Asteroid : MonoBehaviour, IDestroyable 
 	{
-		public float speed = 0.5f;
+		const float minSpeed = 0.5f;
+		const float maxSpeed = 2f;
+
+		float speed;
 
 		Vector3 rotationAngle;
 		float rotationSpeed;
 
 		void Start()
 		{
+			speed = Random.Range(minSpeed, maxSpeed);
 			rotationAngle = new Vector3(Random.Range(0, 180), Random.Range(0, 180), Random.Range(0, 180));
 			rotationSpeed = Random.Range(2f, 4f);
 		}

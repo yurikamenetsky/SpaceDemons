@@ -12,4 +12,9 @@ namespace DragonsDemons.Common
 	{
 		void Destroy();
 	}
+
+	interface IWeapon
+	{
+		void MakeDamage();
+	}
 }

@@ -8,7 +8,7 @@ namespace DragonsDemons.View
 {
     public class PlayerView : MonoBehaviour
     {
-		void OnTriggerEnter(Collider other)
+		void OnTriggerEnter2D(Collider2D other)
 		{
 			if(other.GetComponent<IDestroyable>() != null)
 			{

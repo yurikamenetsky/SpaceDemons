@@ -5,7 +5,7 @@ namespace DragonsDemons.View.Enemy
 {
 	public class EnemyManager : MonoBehaviour 
 	{
-		[SerializeField] GameObject asteroidPrefab;
+		[SerializeField] GameObject[] asteroidPrefabs;
 		[SerializeField] Vector2 boundsX;
 		[SerializeField] float maxY;
 
@@ -16,9 +16,9 @@ namespace DragonsDemons.View.Enemy
 
 		void CreateAsteroid()
 		{
-			GameObject go = Instantiate(asteroidPrefab) as GameObject;
+			GameObject go = Instantiate(asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)]) as GameObject;
 			go.transform.parent = transform;
-			go.transform.position = new Vector3(Random.Range(boundsX.x, boundsX.y), maxY, 0);
+			go.transform.position = new Vector3(Random.Range(boundsX.x, boundsX.y), maxY, Random.Range(3, 15));
 			go.transform.Rotate(new Vector3(Random.Range(0, 180), Random.Range(0, 180), Random.Range(0, 180)));
 			Invoke("CreateAsteroid", Random.Range(1f, 5f));
 		}
