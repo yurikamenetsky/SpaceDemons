@@ -20,18 +20,18 @@ namespace DragonsDemons.Model
 		DamageMultiplier,
 		ArmorAdd,
 		ArmorMultiplier,
-		Health,
-		Regeneration,
-		Freez,
-		Slow,
-		Speed,
-		ProjectileSpeed,
-		Stealth,
-		LifeSteal,
-		DamageOverTime,
+		HealthAdd,
+		HealthRegeneration,
+		SpeedUp,
+		ProjectileSpeedUp,
 		Experience,
 		ExperienceMultiplier,
 		GoldMultiplier,
+		Freeze,
+		Slow,
+		Stealth,
+		LifeSteal,
+		DamageOverTime,
 		Support
 	}
 
@@ -44,14 +44,16 @@ namespace DragonsDemons.Model
 
 	public class AbilityDef
 	{
-		public readonly float attackRange;
+		public readonly float range;
 		public readonly float duration;
 		public readonly float cooldown;
 		public readonly float energyCost;
 		public readonly float healthCost;
 		public readonly float projectileSpeed;
-
+		public readonly float projectileCount;
 		public readonly int requredPlayerLevel;
+		public readonly string prefabId;
+
 		public readonly int maxLevel;
 		public readonly AbilityType type;
 		public readonly DamageType damageType;
@@ -59,8 +61,7 @@ namespace DragonsDemons.Model
 		public readonly string name;
 		public readonly string descr;
 		public readonly string icon;
-		public readonly string prefabId;
-		public readonly Dictionary<AbilityBonusType, AbilityParams> param;
+		public readonly Dictionary<AbilityBonusType, AbilityParams> parameters;
 	}
 
 	public class Ability 
